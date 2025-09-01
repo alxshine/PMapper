@@ -14,6 +14,23 @@ Additional information can be found in [the project wiki](https://github.com/ncc
 
 # Installation
 
+As of 2025 a containerized setup is the only reasonable way to get this running on a modern system.
+
+## Using Docker
+
+_(After cloning from source)_
+
+~~~bash
+cd PMapper
+docker build -t $TAG .
+docker run -it $TAG
+~~~
+
+You can use `-e|--env` or `--env-file` to pass the `AWS_*` environment variables for credentials when calling
+`docker run ...`, or use `-v` to mount your `~/.aws/` directory and use the `AWS_CONFIG_FILE` and `AWS_SHARED_CREDENTIALS_FILE` environment variables.
+The current Dockerfile should put you into a shell with `pmapper -h` ready to go as well as 
+`graphviz` already installed. 
+
 ## Requirements
 
 Principal Mapper is built using the `botocore` library and Python 3.5+. Principal Mapper 
@@ -40,21 +57,6 @@ Then install with Pip:
 cd PMapper
 pip install .
 ~~~
-
-## Using Docker
-
-_(After cloning from source)_
-
-~~~bash
-cd PMapper
-docker build -t $TAG .
-docker run -it $TAG
-~~~
-
-You can use `-e|--env` or `--env-file` to pass the `AWS_*` environment variables for credentials when calling
-`docker run ...`, or use `-v` to mount your `~/.aws/` directory and use the `AWS_CONFIG_FILE` and `AWS_SHARED_CREDENTIALS_FILE` environment variables.
-The current Dockerfile should put you into a shell with `pmapper -h` ready to go as well as 
-`graphviz` already installed. 
 
 # Usage
 
