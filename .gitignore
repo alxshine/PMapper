@@ -16,3 +16,4 @@
 
 # Ignore venv
 /venv*
+*.egg-info
