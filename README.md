@@ -14,7 +14,25 @@ Additional information can be found in [the project wiki](https://github.com/ncc
 
 # Installation
 
-As of 2025 a containerized setup is the only reasonable way to get this running on a modern system.
+## Requirements
+
+Principal Mapper is built using the `botocore` library and Python.
+Principal Mapper also requires `pydot` (available on `pip`), and `graphviz` (available on Windows, macOS, and Linux from  https://graphviz.org/).
+
+## Installation From Source Code
+
+Clone the repository:
+
+~~~bash
+git clone git@github.com:nccgroup/PMapper.git
+~~~
+
+Then install with [`uv`](https://docs.astral.sh/uv/):
+
+~~~bash
+cd PMapper
+uv tool install .
+~~~
 
 ## Using Docker
 
@@ -30,33 +48,6 @@ You can use `-e|--env` or `--env-file` to pass the `AWS_*` environment variables
 `docker run ...`, or use `-v` to mount your `~/.aws/` directory and use the `AWS_CONFIG_FILE` and `AWS_SHARED_CREDENTIALS_FILE` environment variables.
 The current Dockerfile should put you into a shell with `pmapper -h` ready to go as well as 
 `graphviz` already installed. 
-
-## Requirements
-
-Principal Mapper is built using the `botocore` library and Python 3.5+. Principal Mapper 
-also requires `pydot` (available on `pip`), and `graphviz` (available on Windows, macOS, and Linux from 
-https://graphviz.org/ ).
-
-## Installation from Pip
-
-~~~bash
-pip install principalmapper
-~~~
-
-## Installation From Source Code
-
-Clone the repository:
-
-~~~bash
-git clone git@github.com:nccgroup/PMapper.git
-~~~
-
-Then install with Pip:
-
-~~~bash
-cd PMapper
-pip install .
-~~~
 
 # Usage
 
