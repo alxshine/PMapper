@@ -21,12 +21,7 @@ Principal Mapper also requires `pydot` (available on `pip`), and `graphviz` (ava
 
 ## Installation From Source Code
 
-Clone the repository:
-
-~~~bash
-git clone git@github.com:nccgroup/PMapper.git
-~~~
-
+Clone the repository.
 Then install with [`uv`](https://docs.astral.sh/uv/):
 
 ~~~bash
